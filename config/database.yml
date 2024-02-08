@@ -83,5 +83,5 @@ test:
 production:
   <<: *default
   database: maybe_production
-  username: maybe
+  username: <%= ENV.fetch("POSTGRES_USER") { nil } %>
   password: <%= ENV["MAYBE_DATABASE_PASSWORD"] %>
